@@ -1,0 +1,31 @@
+<!-- tasks/templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>English Practice</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to English Practice</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'task_list' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'translation_task' %}">Translation Task</a></li>  <!-- Добавьте эту строку -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer>
+        <p>© 2024 English Practice. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

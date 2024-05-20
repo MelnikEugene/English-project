@@ -1,0 +1,17 @@
+<!-- tasks/templates/tasks/translation_task.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Translate the following Russian words into English:</h2>
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        <div>
+            <label>{{ field.label }}:</label>
+            {{ field }}
+        </div>
+    {% endfor %}
+    <button type="submit">Submit Answers</button>
+</form>
+{% endblock %}
+

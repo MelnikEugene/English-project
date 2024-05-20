@@ -1,0 +1,9 @@
+<!-- tasks/templates/tasks/translation_result.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Results</h2>
+<p>You scored {{ score }} out of {{ total }}.</p>
+<a href="{% url 'translation_task' %}">Try again</a>
+{% endblock %}
+

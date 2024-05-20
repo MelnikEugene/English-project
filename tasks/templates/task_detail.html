@@ -1,0 +1,23 @@
+<!-- tasks/templates/task_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ task.title }}</h2>
+    <p>{{ task.description }}</p>
+    <p><strong>Example:</strong> {{ task.example }}</p>
+
+    <h3>Submit your solution:</h3>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="solution_text" rows="4" cols="50"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Previous Solutions:</h3>
+    <ul>
+        {% for solution in task.solution_set.all %}
+            <li>{{ solution.text }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

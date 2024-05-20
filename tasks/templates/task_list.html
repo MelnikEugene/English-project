@@ -1,0 +1,15 @@
+<!-- tasks/templates/task_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Tasks List</h2>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <a href="{% url 'task_detail' task.id %}">{{ task.title }}</a>
+                <p>{{ task.description|truncatewords:30 }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
